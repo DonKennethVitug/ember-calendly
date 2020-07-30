@@ -1,4 +1,4 @@
-# calendly
+# Ember Calendly
 
 ## Instructions
 
