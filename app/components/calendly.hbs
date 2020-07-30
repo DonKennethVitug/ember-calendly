@@ -1,0 +1,39 @@
+<div class="container">
+  <input type="text" class="form-control" value="{{moment-format selectedDate 'MM/DD/YYYY'}}" readonly>
+  <hr class="spacer spacer-sm">
+  <table class="table table-condensed table-bordered table-striped">
+    <thead>
+      <tr>
+        <th colspan="7">
+          <div class="search-autocomplete input-group input-group-lg">
+            <span class="input-group-append">
+              <button class="btn btn-secondary" type="button" {{on "click" this.previous}}><i class="fa fa-arrow-left"></i></button>
+            </span>
+            <span class="form-control date-header" id="monthAndYear"> {{ monthAndYear }} </span>
+            <span class="input-group-append">
+              <button class="btn btn-secondary" type="button" {{on "click" this.next}}><i class="fa fa-arrow-right"></i></button>
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>Su</th>
+        <th>Mo</th>
+        <th>Tu</th>
+        <th>We</th>
+        <th>Th</th>
+        <th>Fr</th>
+        <th>Sa</th>
+      </tr>
+    </thead>
+    <tbody id="calendly-body">
+      {{#each calendarRows as |calendarRow|}}
+        <tr>
+          {{#each calendarRow.days as |day|}}
+            <td class="{{if day.currentDay "bg-info" ""}}" {{on "click" this.setDate}}>{{ day.dayValue }}</td>
+          {{/each}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+hr.spacer {
+	border-color: transparent;
+	margin-top: 15px;
+	margin-bottom: 14px;
+	width: 100%;
+}
+
+hr.spacer.spacer-lg {
+	margin-top: 25px;
+	margin-bottom: 24px;
+}
+
+hr.spacer.spacer-sm {
+	margin-top: 10px;
+	margin-bottom: 9px;
+}
+
+.date-header {
+	border: 0 !important;
+}
+
+.btn {
+	border-radius: 0 !important
+}
