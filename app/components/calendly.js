@@ -36,6 +36,7 @@ export default class CalendlyComponent extends Component {
   @action previous() {
     this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
     this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
+
     this.initCalendar(this.currentMonth, this.currentYear);
   }
 
@@ -52,6 +53,12 @@ export default class CalendlyComponent extends Component {
     this.calendarRows = []; // reset calendar rows
     if (day) {
       this.selectedDate = new Date(year, month, day);
+    }
+    else if(
+      month === this.selectedDate.getMonth() &&
+      year === this.selectedDate.getFullYear()
+    ) {
+      day = this.selectedDate.getDate();
     }
     this.monthAndYear = this.months[month] + " " + year; // set the header date
     this.calendarRows = this.calendly.getCalendarRows(month, year, day); // get the calendar rows

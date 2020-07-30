@@ -9,7 +9,7 @@
             <span class="input-group-append">
               <button class="btn btn-secondary" type="button" {{on "click" this.previous}}><i class="fa fa-arrow-left"></i></button>
             </span>
-            <span class="form-control date-header" id="monthAndYear"> {{ monthAndYear }} </span>
+            <span class="form-control date-header" id="monthAndYear"> {{monthAndYear}} </span>
             <span class="input-group-append">
               <button class="btn btn-secondary" type="button" {{on "click" this.next}}><i class="fa fa-arrow-right"></i></button>
             </span>
@@ -30,7 +30,7 @@
       {{#each calendarRows as |calendarRow|}}
         <tr>
           {{#each calendarRow.days as |day|}}
-            <td class="{{if day.currentDay "bg-info" ""}}" {{on "click" this.setDate}}>{{ day.dayValue }}</td>
+            <td class="{{if day.currentDay "bg-info" ""}}" {{on "click" this.setDate}}>{{day.dayValue}}</td>
           {{/each}}
         </tr>
       {{/each}}
