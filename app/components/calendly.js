@@ -36,7 +36,6 @@ export default class CalendlyComponent extends Component {
   @action previous() {
     this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
     this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
-
     this.initCalendar(this.currentMonth, this.currentYear);
   }
 
